@@ -1,41 +1,40 @@
 # CodeSmith – AI-Powered Code Generation Platform
 
-CodeSmith is an intelligent coding assistant built on top of the **Astra** agentic AI framework. It simulates a software-engineering team where multiple specialized agents collaborate to generate, review, test, and document code across multiple programming languages.
+CodeSmith is an intelligent coding assistant built on the **Astra** agentic AI framework. It simulates a software engineering team, where multiple specialized agents collaborate to generate, review, test, and document code across multiple programming languages.
 
 ---
 
-##  Features
-- **Agentic multi-role workflow**: Agents collaborate like a real engineering team.
-- **Multi-language support**: Extendable to generate and validate code in Python, JavaScript, Java, C++, and more.
-- **Local LLM integration**: Works with Ollama for offline model hosting; optional support for OpenAI and Gemini.
+## Features
+- **Agentic multi-role workflow** – Agents coordinate like a real software engineering team.  
+- **Multi-language support** – Support for Python, JavaScript, Java, C++, and more.  
+- **Local LLM integration** – Runs with Ollama for offline model hosting; optional support for OpenAI and Gemini.  
 
 ---
 
 ##  Installation & Setup
 
-1. Clone the repository, create/activate a virtual environment, install Python dependencies, pull an Ollama model, and run the Streamlit app (all commands shown below):
+Follow the steps below to set up the project:
 
-    git clone https://github.com/sooryabyte/codesmith.git
-    cd codesmith
+```bash
+# 1. Clone the repository
+git clone https://github.com/sooryabyte/codesmith.git
+cd codesmith
 
-    ### Create virtual environment (POSIX)
-    python3 -m venv venv
-    source venv/bin/activate
+# 2. Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
-    ### Or Windows (PowerShell)
-    python -m venv venv
-    venv\Scripts\Activate.ps1
+# 3. Install dependencies
+pip install -r requirements.txt
 
-    ### Install required packages
-    pip install -r requirements.txt
+# 4. Install and configure Ollama (see https://ollama.ai)
+# Example: pull a coding model (Qwen 2.5 Coder 7B)
+ollama pull qwen2.5-coder:7b
 
-    ### Install and configure Ollama (follow instructions at https://ollama.ai)
-    ### Example: pull a coding model (Qwen 2.5 Coder 7B)
-    ollama pull qwen2.5-coder:7b
+# 5. Launch the Streamlit frontend
+streamlit run CodeSmith.py
 
-    ### Run the Streamlit frontend
-    streamlit run CodeSmith.py
-
+```
 ---
 
 ##  Usage
