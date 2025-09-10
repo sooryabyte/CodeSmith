@@ -17,7 +17,7 @@ Follow the steps below to set up the project:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/sooryabyte/codesmith.git
+git clone https://github.com/sooryabyte/CodeSmith.git
 cd codesmith
 
 # 2. Create and activate a virtual environment
