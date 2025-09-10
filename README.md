@@ -18,22 +18,22 @@ CodeSmith is an intelligent coding assistant built on top of the **Astra** agent
     git clone https://github.com/sooryabyte/codesmith.git
     cd codesmith
 
-    # Create virtual environment (POSIX)
+    ### Create virtual environment (POSIX)
     python3 -m venv venv
     source venv/bin/activate
 
-    # Or Windows (PowerShell)
-    # python -m venv venv
-    # venv\Scripts\Activate.ps1
+    ### Or Windows (PowerShell)
+    python -m venv venv
+    venv\Scripts\Activate.ps1
 
-    # Install required packages
+    ### Install required packages
     pip install -r requirements.txt
 
-    # Install and configure Ollama (follow instructions at https://ollama.ai)
-    # Example: pull a coding model (Qwen 2.5 Coder 7B)
+    ### Install and configure Ollama (follow instructions at https://ollama.ai)
+    ### Example: pull a coding model (Qwen 2.5 Coder 7B)
     ollama pull qwen2.5-coder:7b
 
-    # Run the Streamlit frontend
+    ### Run the Streamlit frontend
     streamlit run CodeSmith.py
 
 ---
