@@ -7,7 +7,7 @@ CodeSmith is a multi‑agent code generation and evaluation system. It orchestra
 
 Video Demonstration
 -------------------
-[![Watch on YouTube](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/ehxIGaaGq3E?si=Z8r_VbJTk42HBOul)
+[![Watch the demo](https://img.youtube.com/vi/ehxIGaaGq3E/0.jpg)](https://www.youtube.com/watch?v=ehxIGaaGq3E)
 
 
 Key Features
@@ -102,6 +102,7 @@ Limitations
 * Long outputs are not streamed progressively in the current Streamlit interface.
 * QA loop iteration cap prevents infinite fix cycles (tune if necessary).
 * Public Piston endpoint is rate‑limited; heavy usage may require self‑hosting.
+
 
 
 
