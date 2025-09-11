@@ -1,0 +1,275 @@
+1
+00:00:04,294 --> 00:00:06,534
+Hey guys, this is a quick demo for
+
+2
+00:00:06,534 --> 00:00:09,254
+Codesmith. It's a multi-agent AI system
+
+3
+00:00:09,254 --> 00:00:10,934
+that takes a prompt and turns it into
+
+4
+00:00:10,934 --> 00:00:13,774
+tested, fixed, and documented code all by
+
+5
+00:00:13,774 --> 00:00:16,374
+itself. Right now, we'll install it from
+
+6
+00:00:16,374 --> 00:00:18,694
+scratch, run a prompt, and look at what
+
+7
+00:00:18,694 --> 00:00:19,734
+each agent does.
+
+8
+00:00:20,190 --> 00:00:22,470
+I'll be using a conda terminal to create
+
+9
+00:00:22,470 --> 00:00:24,830
+the environment and run the project. I
+
+10
+00:00:24,830 --> 00:00:27,150
+prefer this over global Python, which
+
+11
+00:00:27,150 --> 00:00:29,007
+keeps things clean. I'll be cloning
+
+12
+00:00:29,390 --> 00:00:31,390
+this directly into my desktop.
+
+13
+00:00:31,806 --> 00:00:33,606
+We'll just follow the instruction here to
+
+14
+00:00:33,606 --> 00:00:35,806
+create a virtual environment and install
+
+15
+00:00:35,806 --> 00:00:37,326
+all the dependencies required.
+
+16
+00:01:45,290 --> 00:01:46,810
+The installation process is
+
+17
+00:01:46,810 --> 00:01:49,130
+time-consuming, so I'll skip through this
+
+18
+00:01:49,130 --> 00:01:49,530
+part.
+
+19
+00:01:57,844 --> 00:02:00,724
+As you can see, the streamlit UI is up.
+
+20
+00:02:01,124 --> 00:02:04,004
+I'll pick Gemini as the back end. You can
+
+21
+00:02:04,004 --> 00:02:06,324
+use a local Allama model as well, but for
+
+22
+00:02:06,324 --> 00:02:08,404
+the demo, I'll stick to a cloud model.
+
+23
+00:02:14,640 --> 00:02:17,520
+I'll get an API key. I'm choosing a
+
+24
+00:02:17,520 --> 00:02:20,480
+fast model. The flash is fine for this. I
+
+25
+00:02:20,480 --> 00:02:22,640
+don't have a paid Open AI key for now,
+
+26
+00:02:22,640 --> 00:02:24,320
+and running smaller local models is
+
+27
+00:02:24,320 --> 00:02:26,160
+slower and they hallucinate more as the
+
+28
+00:02:26,160 --> 00:02:27,440
+tasks get complex.
+
+29
+00:02:37,693 --> 00:02:39,373
+Now let's give it a simple prompt for
+
+30
+00:02:39,373 --> 00:02:41,533
+now, which is to generate a Python
+
+31
+00:02:41,533 --> 00:02:42,653
+calculator program.
+
+32
+00:03:00,515 --> 00:03:02,835
+As it runs, you'll see each agent section
+
+33
+00:03:02,835 --> 00:03:03,395
+fill in.
+
+34
+00:03:23,259 --> 00:03:25,259
+The product manager defines acceptance
+
+35
+00:03:25,259 --> 00:03:28,179
+criteria, a strict IO contract, and test
+
+36
+00:03:28,179 --> 00:03:31,019
+cases. Those test cases drive all
+
+37
+00:03:31,019 --> 00:03:31,899
+verification.
+
+38
+00:03:35,913 --> 00:03:37,753
+The architect explains the structure,
+
+39
+00:03:37,833 --> 00:03:40,553
+like how input parsing works, how output
+
+40
+00:03:40,553 --> 00:03:42,713
+must be exact. Helps keep it
+
+41
+00:03:42,713 --> 00:03:43,753
+deterministic.
+
+42
+00:03:46,154 --> 00:03:48,234
+The developer just gives the full program
+
+43
+00:03:48,234 --> 00:03:50,954
+inside a single fenced code block. No
+
+44
+00:03:50,954 --> 00:03:51,914
+extra fluff.
+
+45
+00:03:56,183 --> 00:03:58,503
+The QA agent extracts the code and the
+
+46
+00:03:58,503 --> 00:04:00,903
+test cases list, runs each test through a
+
+47
+00:04:00,903 --> 00:04:03,463
+remote sandbox . It feeds
+
+48
+00:04:03,463 --> 00:04:06,023
+standard input, captures standard output,
+
+49
+00:04:06,183 --> 00:04:09,063
+and marks pass or fail. If a mismatch,
+
+50
+00:04:09,303 --> 00:04:11,383
+you'd see expected versus actual.
+
+51
+00:04:12,503 --> 00:04:14,583
+Fix and retest agent if triggered,
+
+52
+00:04:14,823 --> 00:04:17,143
+patches the code and reruns QA until
+
+53
+00:04:17,143 --> 00:04:18,983
+everything passes or the cap hits.
+
+54
+00:04:20,219 --> 00:04:22,459
+Documentation Agent generates concise
+
+55
+00:04:22,459 --> 00:04:24,699
+usage instructions plus a couple example
+
+56
+00:04:24,699 --> 00:04:26,699
+runs matching the IO contract.
+
+57
+00:04:28,402 --> 00:04:30,242
+Tools available for now include one to
+
+58
+00:04:30,242 --> 00:04:32,242
+extract the latest code block, one to
+
+59
+00:04:32,242 --> 00:04:34,562
+parse test cases, a remote execution
+
+60
+00:04:34,562 --> 00:04:37,122
+tool, Piston, that safely runs code in
+
+61
+00:04:37,122 --> 00:04:39,562
+many languages, a write file helper, and
+
+62
+00:04:39,562 --> 00:04:42,242
+a tiny Python REPL for internalreasoning.
+
+63
+00:04:42,682 --> 00:04:45,402
+So that's Codesmith. Natural language in,
+
+64
+00:04:45,562 --> 00:04:48,442
+tested, fixed, documented program out.
+
+65
+00:04:48,762 --> 00:04:51,082
+You can swap providers, OpenAI,
+
+66
+00:04:51,322 --> 00:04:53,962
+Anthropic, Gemini, or Local Alama.
+
+67
+00:04:54,362 --> 00:04:56,922
+Extend it by adding a provider adapter or
+
+68
+00:04:56,922 --> 00:04:59,882
+a new tool. Repo links in description.
+
+69
+00:05:00,282 --> 00:05:03,162
+Star it if it helps you. See you later.
