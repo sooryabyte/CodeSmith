@@ -7,7 +7,7 @@ CodeSmith is a multi‑agent code generation and evaluation system. It orchestra
 
 Video Demonstration
 -------------------
-Placeholder: https://www.youtube.com/watch?v=REPLACE_WITH_ACTUAL_VIDEO_ID
+
 
 Key Features
 ------------
@@ -37,7 +37,7 @@ Requirements:
 
 1. Clone the repository:
 ```powershell
-git clone https://github.com/your-org/CodeSmith.git
+git clone https://github.com/sooryabyte/CodeSmith.git
 cd CodeSmith
 ```
 2. (Recommended) Create and activate a virtual environment:
@@ -89,14 +89,6 @@ Launch the primary Streamlit interface:
 streamlit run CodeSmith.py
 ```
 Select a model backend (e.g. OpenAI, Gemini, Anthropic, Ollama), provide the corresponding API key if cloud‑based, enter a task (e.g. “Build a C++ CLI that reads 'op a b' lines and prints the numeric result”), and execute. Results are shown per agent in order. The final documentation includes example stdin invocations consistent with the acceptance criteria.
-
-Automated Testing Details
--------------------------
-Test cases are expressed as JSON objects with `stdin` and `expected` fields (and optional `name`). The QA agent:
-1. Extracts the latest code fence.
-2. Extracts and normalizes test cases via `ExtractTestCasesTool`.
-3. Executes the program once per test using `PistonExecuteTool`, passing each test’s stdin payload.
-4. Compares trimmed stdout exactly to the expected string (no extra whitespace permitted).
 
 Security Considerations
 -----------------------
