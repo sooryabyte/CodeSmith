@@ -37,7 +37,7 @@ Requirements:
 
 1. Clone the repository:
 ```powershell
-[git clone https://github.com/sooryabyte/CodeSmith.git](https://github.com/sooryabyte/CodeSmith.git)
+git clone https://github.com/sooryabyte/CodeSmith.git
 cd CodeSmith
 ```
 2. (Recommended) Create and activate a virtual environment:
@@ -101,4 +101,5 @@ Limitations
 * Long outputs are not streamed progressively in the current Streamlit interface.
 * QA loop iteration cap prevents infinite fix cycles (tune if necessary).
 * Public Piston endpoint is rate‑limited; heavy usage may require self‑hosting.
+
 
